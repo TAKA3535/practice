@@ -45,7 +45,7 @@ app.get("/api/todos/:id", (req, res, next) => {
 });
 
 // // todo1件を作成する
-app.delete("/api/todos", (req, res, next) => {
+app.post("/api/todos", (req, res, next) => {
   const todo = req.body;
   const sql = 'insert into todos set ?';
   connection.query(sql, todo, (err, result) => {
